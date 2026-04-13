@@ -1,4 +1,5 @@
 export const DEFAULT_LIBRE_ENDPOINTS = [
+  "https://translate.cutie.dating/translate",
   "https://libretranslate.com/translate",
   "https://translate.argosopentech.com/translate",
 ];
@@ -135,8 +136,8 @@ export async function translateText(text, source, target, options = {}) {
 
   throw new Error(
     lastError?.message
-      ? `Translation failed: ${lastError.message}`
-      : "Translation failed. Please check your internet connection.",
+      ? `Translation failed: ${lastError.message}. Try setting a custom LibreTranslate endpoint in settings.`
+      : "Translation failed. Check internet or add a custom LibreTranslate endpoint in settings.",
   );
 }
 
