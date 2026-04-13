@@ -41,4 +41,14 @@ export default [
       },
     },
   },
+  {
+    files: ["vite.config.js"],
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: {
+        process: "readonly",
+      },
+    },
+  },
 ];

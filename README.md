@@ -79,6 +79,11 @@ npm run build
 npx netlify deploy --prod --dir=dist
 ```
 
+### GitHub Pages
+
+Push to `main` and the included workflow deploys automatically.  
+Live URL pattern: `https://iamsunnymeena.github.io/student-translator/`
+
 ## GitHub
 
 ```bash

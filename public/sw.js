@@ -1,5 +1,5 @@
 const CACHE_NAME = "student-translator-v1";
-const STATIC_ASSETS = ["/", "/manifest.webmanifest"];
+const STATIC_ASSETS = ["./", "./manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -33,7 +33,7 @@ self.addEventListener("fetch", (event) => {
           }
           return response;
         })
-        .catch(() => caches.match("/"));
+        .catch(() => caches.match("./"));
     }),
   );
 });

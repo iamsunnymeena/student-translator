@@ -16,6 +16,7 @@ const NAV_ITEMS = [
   { id: "flashcards", label: "Flashcards" },
   { id: "quiz", label: "Quiz" },
 ];
+const BASE_URL = import.meta.env.BASE_URL;
 
 function App() {
   const [page, setPage] = useState("translate");
@@ -29,7 +30,7 @@ function App() {
 
   useEffect(() => {
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/sw.js").catch(() => {});
+      navigator.serviceWorker.register(`${BASE_URL}sw.js`).catch(() => {});
     }
   }, []);
 
@@ -82,7 +83,7 @@ function Header({ darkMode, onToggleTheme }) {
         <h1>Student Translator</h1>
         <p className="hero-copy">Translate, save, listen, and practice words in small daily steps.</p>
       </div>
-      <img className="hero-mark" src="/icons/icon.svg" alt="" aria-hidden="true" />
+      <img className="hero-mark" src={`${BASE_URL}icons/icon.svg`} alt="" aria-hidden="true" />
       <button className="theme-toggle" type="button" onClick={onToggleTheme}>
         {darkMode ? "Light" : "Dark"}
       </button>
